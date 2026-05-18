@@ -18,7 +18,7 @@ class PengeluaranResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-arrow-trending-down';
     protected static ?string $navigationLabel = 'Pengeluaran';
     protected static ?string $modelLabel = 'Pengeluaran';
-    protected static ?string $navigationGroup = '3. Keuangan';
+    protected static ?string $navigationGroup = 'Keuangan';
 
     public static function form(Form $form): Form
     {

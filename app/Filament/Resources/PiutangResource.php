@@ -16,9 +16,9 @@ class PiutangResource extends Resource
     protected static ?string $model = Piutang::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-magnifying-glass';
-    protected static ?string $navigationLabel = '3.8 Buku Piutang';
+    protected static ?string $navigationLabel = 'Buku Piutang';
     protected static ?string $modelLabel = 'Riwayat Piutang';
-    protected static ?string $navigationGroup = '4. Hutang & Piutang';
+    protected static ?string $navigationGroup = 'Hutang & Piutang';
 
     public static function form(Form $form): Form
     {

@@ -14,9 +14,9 @@ class StokBarangResource extends Resource
     protected static ?string $model = StokBarang::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
-    protected static ?string $navigationLabel = '2.3 Buku Stok Barang';
+    protected static ?string $navigationLabel = 'Buku Stok Barang';
     protected static ?string $modelLabel = 'Riwayat Stok';
-    protected static ?string $navigationGroup = '2. Stok Barang';
+    protected static ?string $navigationGroup = 'Stok Barang';
 
     // Form dihilangkan karena data ini terisi otomatis oleh sistem (Read-Only)
 
@@ -24,40 +24,54 @@ class StokBarangResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id')
+                // ✅ REVISI PINTAR: Menghitung urutan spesifik HANYA untuk barang yang sama
+                Tables\Columns\TextColumn::make('no_urut')
                     ->label('No. Urut')
-                    ->sortable(),
+                    ->state(function (StokBarang $record) {
+                        return StokBarang::where('barang_id', $record->barang_id)
+                            ->where('id', '<=', $record->id)
+                            ->count();
+                    }),
+
                 Tables\Columns\TextColumn::make('tanggal')
                     ->label('Tanggal')
                     ->date('d/m/Y')
                     ->sortable(),
+
                 Tables\Columns\TextColumn::make('uraian')
                     ->label('Uraian')
                     ->wrap()
                     ->searchable(),
+
                 Tables\Columns\TextColumn::make('barang_masuk')
                     ->label('Barang Masuk')
                     ->numeric()
                     ->badge()
                     ->color('success'),
+
                 Tables\Columns\TextColumn::make('saldo_sebelumnya')
                     ->label('Saldo Sebelumnya')
                     ->numeric(),
+
                 Tables\Columns\TextColumn::make('saldo_jual')
                     ->label('Saldo Jual')
                     ->numeric()
                     ->weight('bold'),
+
                 Tables\Columns\TextColumn::make('jumlah_barang_keluar')
                     ->label('Barang Keluar')
                     ->numeric()
                     ->badge()
                     ->color('danger'),
+
                 Tables\Columns\TextColumn::make('nama_pembeli')
                     ->label('Nama Pembeli')
                     ->searchable(),
+
                 Tables\Columns\TextColumn::make('npwp_nik')
                     ->label('NPWP/NIK')
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 Tables\Columns\TextColumn::make('saldo_gudang')
                     ->label('Saldo Gudang (Fisik)')
                     ->numeric()

@@ -27,15 +27,38 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('BASTIONG JAYA TRADE')
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(
+                in: app_path('Filament/Resources'),
+                for: 'App\\Filament\\Resources'
+            )
+            ->discoverPages(
+                in: app_path('Filament/Pages'),
+                for: 'App\\Filament\\Pages'
+            )
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+
+            // 👇 KUNCI URUTAN MENU SIDEBAR 👇
+            ->navigationGroups([
+                'Pembelian & Penjualan',
+                'Stok Barang',
+                'Keuangan',
+                'Hutang & Piutang',
+                'Laporan',
+                'Master Data',
+                'Pengaturan Sistem',
+            ])
+            // 👆 SAMPAI SINI 👆
+
+            ->discoverWidgets(
+                in: app_path('Filament/Widgets'),
+                for: 'App\\Filament\\Widgets'
+            )
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,

@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\DB;
 class Neraca extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-scale';
-    protected static ?string $navigationLabel = '4. Neraca Keuangan';
+    protected static ?string $navigationLabel = 'Neraca Keuangan';
     protected static ?string $title = 'Laporan Neraca (Aktiva & Pasiva)';
-    protected static ?string $navigationGroup = '5. Laporan';
+    protected static ?string $navigationGroup = 'Laporan';
 
     protected static string $view = 'filament.pages.neraca';
 

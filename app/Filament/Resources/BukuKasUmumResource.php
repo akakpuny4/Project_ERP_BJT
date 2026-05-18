@@ -14,9 +14,9 @@ class BukuKasUmumResource extends Resource
     protected static ?string $model = BukuKasUmum::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
-    protected static ?string $navigationLabel = '3.5 Buku Kas Umum';
-    protected static ?string $modelLabel = 'Mutasi Kas Umum';
-    protected static ?string $navigationGroup = '3. Keuangan';
+    protected static ?string $navigationLabel = 'Buku Kas Umum';
+    protected static ?string $modelLabel = 'Buku Kas Umum';
+    protected static ?string $navigationGroup = 'Keuangan';
 
     // Form dihilangkan karena mutasi ini terisi otomatis oleh sistem
 
@@ -24,6 +24,15 @@ class BukuKasUmumResource extends Resource
     {
         return $table
             ->columns([
+                // ✅ TAMBAHAN: Nomor Urut Pintar berdasarkan masing-masing Rekening
+                Tables\Columns\TextColumn::make('no_urut')
+                    ->label('No. Urut')
+                    ->state(function (BukuKasUmum $record) {
+                        return BukuKasUmum::where('rekening_id', $record->rekening_id)
+                            ->where('id', '<=', $record->id)
+                            ->count();
+                    }),
+
                 Tables\Columns\TextColumn::make('tanggal')
                     ->label('Tanggal')
                     ->date('d/m/Y')

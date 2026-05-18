@@ -18,9 +18,9 @@ class BarangKeluarResource extends Resource
     protected static ?string $model = BarangKeluar::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-up-tray';
-    protected static ?string $navigationLabel = '2.2 Barang Keluar';
+    protected static ?string $navigationLabel = 'Barang Keluar';
     protected static ?string $modelLabel = 'Barang Keluar';
-    protected static ?string $navigationGroup = '2. Stok Barang';
+    protected static ?string $navigationGroup = 'Stok Barang';
 
     public static function form(Form $form): Form
     {

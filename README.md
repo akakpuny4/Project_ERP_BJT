@@ -7,61 +7,254 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<div align="center">
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# 🚀 ERP CV BJT — Laravel + Filament
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Panduan Instalasi & Menjalankan Project dari GitHub
 
-## Learning Laravel
+<img src="https://img.shields.io/badge/Laravel-12-red?style=for-the-badge&logo=laravel">
+<img src="https://img.shields.io/badge/Filament-Admin%20Panel-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/PHP-8+-blue?style=for-the-badge&logo=php">
+<img src="https://img.shields.io/badge/MySQL-Database-blue?style=for-the-badge&logo=mysql">
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+</div>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# 📌 Tentang Project
 
-## Laravel Sponsors
+ERP CV BJT adalah sistem ERP berbasis **Laravel + Filament** yang digunakan untuk membantu pengelolaan:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- 📦 Manajemen Barang
+- 💰 Keuangan & Kas
+- 🧾 Penjualan & Pembelian
+- 🏦 Rekening & Mutasi Saldo
+- 📄 Cetak PDF Kuitansi
+- 👤 Panel Admin Modern
 
-### Premium Partners
+Project ini sudah menggunakan:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- ✅ Laravel Framework
+- ✅ Filament Admin Panel
+- ✅ Database MySQL
+- ✅ Seeder Data Awal
+- ✅ Sistem Storage Laravel
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# ⚙️ Persiapan (Prasyarat)
 
-## Code of Conduct
+Pastikan software berikut sudah ter-install di komputer Anda:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Software | Fungsi |
+|---|---|
+| XAMPP / Laragon | Menjalankan Apache, PHP, dan MySQL |
+| Composer | Install dependency Laravel |
+| Git Bash | Clone repository & terminal command |
+| VS Code | Code editor |
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 📥 Langkah 1 — Clone Repository
 
-## License
+Buka terminal/Git Bash lalu jalankan:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Project_ERP_BJT
+```bash
+git clone https://github.com/akakpuny4/Project_ERP_BJT.git
+```
+
+Masuk ke folder project:
+
+```bash
+cd Project_ERP_BJT
+```
+
+---
+
+# 📦 Langkah 2 — Install Dependencies
+
+Install seluruh dependency Laravel dan Filament:
+
+```bash
+composer install
+```
+
+> ⏳ Tunggu hingga proses selesai dan pastikan internet aktif.
+
+---
+
+# 🔐 Langkah 3 — Setup File Environment (.env)
+
+Copy file `.env.example` menjadi `.env`:
+
+```bash
+cp .env.example .env
+```
+
+Lalu buka file `.env` dan ubah konfigurasi database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=erp_bjt
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 📌 Keterangan
+
+| Config | Penjelasan |
+|---|---|
+| DB_DATABASE | Nama database yang akan dibuat |
+| DB_USERNAME | Username MySQL |
+| DB_PASSWORD | Password MySQL |
+
+---
+
+# 🗄️ Langkah 4 — Buat Database
+
+1. Jalankan **Apache** dan **MySQL**
+2. Buka browser:
+
+```text
+http://localhost/phpmyadmin
+```
+
+3. Buat database baru:
+
+```text
+erp_bjt
+```
+
+> ⚠️ Nama database harus sama dengan isi `DB_DATABASE` pada file `.env`
+
+---
+
+# 🔑 Langkah 5 — Generate Application Key
+
+Laravel membutuhkan application key untuk sistem keamanan.
+
+Jalankan:
+
+```bash
+php artisan key:generate
+```
+
+---
+
+# 🏗️ Langkah 6 — Migrasi & Seeder Database
+
+Perintah ini akan:
+
+- Membuat seluruh tabel database
+- Mengisi data awal
+- Membuat akun admin
+- Menambahkan daftar barang
+- Menambahkan rekening default
+
+Jalankan:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+---
+
+# 🔗 Langkah 7 — Hubungkan Storage Laravel
+
+Agar upload file & PDF berjalan dengan baik:
+
+```bash
+php artisan storage:link
+```
+
+---
+
+# 🎨 Langkah 8 — Install / Upgrade Filament Assets
+
+Install asset CSS & JS Filament:
+
+```bash
+php artisan filament:upgrade
+```
+
+---
+
+# 🚀 Langkah 9 — Jalankan Server
+
+Nyalakan Laravel server:
+
+```bash
+php artisan serve
+```
+
+Buka browser:
+
+```text
+http://127.0.0.1:8000/admin
+```
+
+---
+
+# 👤 Login Default
+
+```text
+Email    : admin@cvbjt.com
+Password : password
+```
+
+---
+
+# 📁 Struktur Penting Project
+
+```text
+app/
+database/
+public/
+resources/
+routes/
+storage/
+.env
+composer.json
+artisan
+```
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Description |
+|---|---|
+| Laravel | Backend Framework |
+| Filament | Admin Panel |
+| MySQL | Database |
+| PHP | Programming Language |
+| TailwindCSS | Styling |
+| Livewire | Reactive Component |
+
+---
+
+# 🎉 Selesai!
+
+Project ERP Laravel + Filament Anda sekarang sudah siap digunakan 🚀
+
+Jika ada error saat instalasi, biasanya penyebabnya:
+
+- Composer belum ter-install
+- PHP belum masuk PATH
+- Database belum dibuat
+- Apache/MySQL belum running
+- Versi PHP tidak sesuai
+
+---
+
+<div align="center">
+
+## ⭐ Jangan lupa kasih star repository ini ⭐
+
+Made with ❤️ using Laravel & Filament
+
+</div>

@@ -21,9 +21,9 @@ class PenjualanResource extends Resource
     protected static ?string $model = Penjualan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
-    protected static ?string $navigationLabel = '1.1 Penjualan';
+    protected static ?string $navigationLabel = 'Penjualan';
     protected static ?string $modelLabel = 'Data Penjualan';
-    protected static ?string $navigationGroup = '1. Pembelian & Penjualan';
+    protected static ?string $navigationGroup = 'Pembelian & Penjualan';
 
     public static function form(Form $form): Form
     {

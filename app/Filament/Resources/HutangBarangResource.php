@@ -14,9 +14,9 @@ class HutangBarangResource extends Resource
     protected static ?string $model = HutangBarang::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-archive-box-x-mark';
-    protected static ?string $navigationLabel = '3.7.1 Hutang Barang';
+    protected static ?string $navigationLabel = 'Hutang Barang';
     protected static ?string $modelLabel = 'Riwayat Hutang Barang';
-    protected static ?string $navigationGroup = '4. Hutang & Piutang';
+    protected static ?string $navigationGroup = 'Hutang & Piutang';
 
     public static function table(Table $table): Table
     {

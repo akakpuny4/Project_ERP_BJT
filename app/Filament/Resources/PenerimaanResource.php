@@ -16,9 +16,9 @@ class PenerimaanResource extends Resource
     protected static ?string $model = Penerimaan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-trending-up';
-    protected static ?string $navigationLabel = '3.1 Penerimaan';
+    protected static ?string $navigationLabel = 'Penerimaan';
     protected static ?string $modelLabel = 'Penerimaan';
-    protected static ?string $navigationGroup = '3. Keuangan';
+    protected static ?string $navigationGroup = 'Keuangan';
 
     public static function form(Form $form): Form
     {

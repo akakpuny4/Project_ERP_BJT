@@ -19,9 +19,9 @@ class PembelianResource extends Resource
     protected static ?string $model = Pembelian::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-shopping-cart';
-    protected static ?string $navigationLabel = '1.2 Pembelian';
+    protected static ?string $navigationLabel = 'Pembelian';
     protected static ?string $modelLabel = 'Data Pembelian';
-    protected static ?string $navigationGroup = '1. Pembelian & Penjualan';
+    protected static ?string $navigationGroup = 'Pembelian & Penjualan';
 
     public static function form(Form $form): Form
     {

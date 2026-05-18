@@ -17,9 +17,9 @@ class MutasiSaldoResource extends Resource
     protected static ?string $model = MutasiSaldo::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-arrows-right-left';
-    protected static ?string $navigationLabel = '3.9 Mutasi Saldo';
+    protected static ?string $navigationLabel = 'Mutasi Saldo';
     protected static ?string $modelLabel = 'Mutasi Saldo';
-    protected static ?string $navigationGroup = '3. Keuangan';
+    protected static ?string $navigationGroup = 'Keuangan';
 
     public static function form(Form $form): Form
     {

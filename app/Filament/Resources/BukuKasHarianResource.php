@@ -13,9 +13,9 @@ class BukuKasHarianResource extends Resource
     protected static ?string $model = BukuKasHarian::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-currency-dollar';
-    protected static ?string $navigationLabel = '3.6 Buku Kas Harian';
+    protected static ?string $navigationLabel = 'Buku Kas Harian';
     protected static ?string $modelLabel = 'Buku Kas Harian';
-    protected static ?string $navigationGroup = '3. Keuangan';
+    protected static ?string $navigationGroup = 'Keuangan';
 
     public static function table(Table $table): Table
     {
