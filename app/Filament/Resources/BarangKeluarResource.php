@@ -126,3 +126,4 @@ class BarangKeluarResource extends Resource
         ];
     }
 }
+// 🛡️ PROTEKSI 1: Validasi tambahan di level Form sebelum data disimpan ke database
